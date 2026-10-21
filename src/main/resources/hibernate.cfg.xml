@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/evaluation_db?createDatabaseIfNotExist=true&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <!-- Mappings for Exercice 1 -->
+        <mapping class="ma.projet.classes.Categorie"/>
+        <mapping class="ma.projet.classes.Produit"/>
+        <mapping class="ma.projet.classes.Commande"/>
+        <mapping class="ma.projet.classes.LigneCommandeProduit"/>
+
+        <!-- Mappings for Exercice 2 -->
+        <mapping class="ma.projet.classes.Employe"/>
+        <mapping class="ma.projet.classes.Projet"/>
+        <mapping class="ma.projet.classes.Tache"/>
+        <mapping class="ma.projet.classes.EmployeTache"/>
+
+        <!-- Mappings for Exercice 3 -->
+        <mapping class="ma.projet.beans.Personne"/>
+        <mapping class="ma.projet.beans.Homme"/>
+        <mapping class="ma.projet.beans.Femme"/>
+        <mapping class="ma.projet.beans.Mariage"/>
+    </session-factory>
+</hibernate-configuration>
